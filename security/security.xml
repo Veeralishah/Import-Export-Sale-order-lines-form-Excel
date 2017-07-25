@@ -1,0 +1,9 @@
+<odoo>
+
+
+<record id="group_sale_impex_orderline" model="res.groups">
+        <field name="name">Import/Export Sales</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+    
+</odoo>

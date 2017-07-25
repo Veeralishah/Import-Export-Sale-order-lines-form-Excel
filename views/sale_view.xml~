@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <record model="ir.ui.view" id="sale_view_order_form">
+      <field name="name">sale.order.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']" position="after">
+          <group>
+          <group>
+            <field name='xls_data' string="xls file"/>
+          </group>
+          <group>
+            <button name='import_from_xls' string='import' type='object' class='oe_edit_only' states="draft" />
+          </group>
+          </group>
+        </xpath>
+            </field>
+        </record>
+
+  </data>
+</odoo>

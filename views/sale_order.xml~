@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="view_sale_wizard_form">
+        <field name="name">Sale.Wizard.form</field>
+        <field name="res_model">sale.order</field>
+         <field name="src_model">sale.order</field>
+        <field name="view_type">form</field>
+        <field name="arch" type="xml">
+            <form string="Hi i am wizard">
+        <group>
+        <group>
+            <field name="xls_data" string="xls file"/>
+            <button name='import_from_xls' string='import' type='object' class='oe_edit_only'/>
+        </group>
+        </group>
+        <footer>
+        </footer>
+        </form>
+        
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sale_form">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']" position="after">
+                  <group>
+                    <group>
+                        <button  type ="object" string="Import/Export" name="button_action_result" class="oe_highlight" />
+                    </group>
+                  </group>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
